@@ -9,7 +9,7 @@ const resolvers = {
   },
 
   User: {
-    tickets: (user) => user.ticket.map(api.ticket.get)
+    tickets: (user) => user.tickets.map(api.ticket.get)
   },
 };
 

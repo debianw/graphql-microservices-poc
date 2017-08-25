@@ -1,18 +1,18 @@
 //
 const fetch = require('node-fetch');
-const UserApi = `http://localhost:3001`; // User microservice
-const TicketApi = `http://localhost:3002`; // Ticket microservice
+const UserApi = `http://localhost:3000/user`; // User microservice
+const TicketApi = `http://localhost:3000/ticket`; // Ticket microservice
 
 //
 const user = {
-  get: (id) => fetch(`${UserApi}/users/${id}`).then(res => res.json()),
-  all: () => fetch(`${UserApi}/users`).then(res => res.json()),
+  get: (id) => fetch(`${UserApi}/${id}`).then(res => res.json()),
+  all: () => fetch(`${UserApi}`).then(res => res.json()),
 };
 
 //
 const ticket = {
-  get: (id) => fetch(`${TicketApi}/tickets/${id}`).then(res => res.json()),
-  all: () => fetch(`${TicketApi}/tickets`).then(res => res.json()),
+  get: (id) => fetch(`${TicketApi}/${id}`).then(res => res.json()),
+  all: () => fetch(`${TicketApi}`).then(res => res.json()),
 }
 
 //
